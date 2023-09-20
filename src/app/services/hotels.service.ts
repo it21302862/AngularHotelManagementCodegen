@@ -47,9 +47,16 @@ export class HotelService {
     return this.http.get<HotelContractDTO[]>(`${this.apiServerUrl}/api/v1/hotels/all`);
   }
 
+  // public createHotelContract(hotelContractDTO: HotelContractDTO): Observable<string> {
+  //   return this.http.post<string>(`${this.apiServerUrl}/api/v1/hotels/contract`, hotelContractDTO, this.httpOptions);
+  // }
   public createHotelContract(hotelContractDTO: HotelContractDTO): Observable<string> {
-    return this.http.post<string>(`${this.apiServerUrl}/api/v1/hotels/contract`, hotelContractDTO, this.httpOptions);
-  }
+  return this.http.post(`${this.apiServerUrl}/api/v1/hotels/contract`, hotelContractDTO, {
+    ...this.httpOptions,
+    responseType: 'text' // Expect a plain text response
+  });
+}
+  
   
 
 }

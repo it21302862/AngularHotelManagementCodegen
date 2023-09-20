@@ -6,6 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../core/core.service';
 import { SeasonDTO } from '../services/SeasonDTO'; // Import the Season interface
 
+
 @Component({
   selector: 'app-contract-add-edit',
   templateUrl: './contract-add-edit.component.html',
@@ -195,11 +196,13 @@ export class ContractAddEditComponent implements OnInit {
 
       this._hotelService.createHotelContract(formData).subscribe(
         (response) => {
+          this._coreService.openSnackBar('Contract created successfully!', 'done'); // Snackbar notification
           console.log('Contract created successfully:', response);
           this._dialogRef.close();
         },
         (error) => {
           console.error('Error creating contract:', error);
+          this._coreService.openSnackBar('Error creating contract', 'error'); // Snackbar notification for error
         }
       );
     } else {
