@@ -1,0 +1,365 @@
+/* styles.css (or your component's CSS file) */
+.custom-form-width {
+    width: 100%; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+  }
+  
+
+/* CSS */
+.seasons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .season {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .season-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .input-container {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .remove-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    margin-top: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #ff4c4c;
+  }
+
+  .add-season-button {
+    background-color: #4caf50; 
+    color: white; 
+    border: none; 
+    border-radius: 3px; 
+    margin-left: 10px;
+    padding: 10px 20px; 
+    cursor: pointer; 
+  }
+  
+  .add-season-button:hover {
+    background-color: #45a049; 
+  }
+
+
+  /* CSS */
+.supplements-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .supplement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .add-supplement-button {
+    background-color: #4caf50; 
+    color: white; 
+    border: none; 
+    border-radius: 3px; 
+    padding: 10px 20px; 
+    margin-bottom: 10px; 
+    cursor: pointer; 
+  }
+  
+  .add-supplement-button:hover {
+    background-color: #45a049; 
+  }
+
+  .supplement-remove-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    margin-top: 19px;
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .supplement-remove-button:hover {
+    background-color: #ff4c4c;
+  }
+  /* CSS */
+
+
+
+  /* CSS */
+.supplement-prices-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .supplements-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .add-supplement-prices-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .add-supplement-prices-button:hover {
+    background-color: #45a049;
+  }
+  
+  .supplement-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .remove-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #ff4c4c;
+  }
+
+
+  /* CSS */
+.room-types-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .add-room-type-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .add-room-type-button:hover {
+    background-color: #45a049;
+  }
+  
+  .room-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .remove-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #ff4c4c;
+  }
+
+
+  /* CSS */
+.room-type-prices-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .add-room-type-price-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .add-room-type-price-button:hover {
+    background-color: #45a049;
+  }
+  
+  .room-type-price {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+  
+  .remove-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #ff4c4c;
+  }
+
+  
+  /* CSS */
+.markup-prices-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .add-markup-price-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .add-markup-price-button:hover {
+    background-color: #45a049;
+  }
+  
+  .markup-price {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+  
+  .remove-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #ff4c4c;
+  }
+  
+  
+  
+  
+  
+
+  
+  
+  

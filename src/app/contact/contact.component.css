@@ -1,0 +1,86 @@
+
+  /* Style the heading */
+  h1 {
+    font-size: 36px; 
+    text-transform: uppercase; 
+    margin-bottom: 20px;
+    color: rgb(14, 14, 81);
+    font-weight: bold; 
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px; 
+    background: linear-gradient(135deg, aqua, pink); 
+    display: inline-block; 
+    padding: 10px 20px; 
+    border-radius: 10px;
+}
+
+  
+  /* Style the form */
+  .form-group {
+    margin-bottom: 20px;
+   
+  }
+  
+  /* Style the labels */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color:rgb(14, 14, 81)
+
+  }
+
+  .row{
+    color:rgb(14, 14, 81)
+  }
+  
+  /* Style the input fields */
+  input[type="text"],
+  textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="email"],
+  textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    background-color: rgb(14, 14, 81);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the submit button */
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the success message */
+  .alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  }
+  

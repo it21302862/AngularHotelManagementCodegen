@@ -1,0 +1,47 @@
+<div mat-dialog-content>
+  <h1>Save Your Hotel</h1>
+</div>
+<form [formGroup]="hotelForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex. Amaya" formControlName="hotelName"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="location"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Ex. abcd@gmail.com" formControlName="hotelEmail"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Telephone</mat-label>
+        <input matInput type="tel" placeholder="Ex. 07XXXXXXX" formControlName="hotelPhoneNumber"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Description about your hotel</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Image</mat-label>
+        <input matInput  placeholder="Ex. www.example.png" formControlName="imgUrl"/>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button [disabled]="hotelForm.invalid" type="submit" mat-raised-button color="primary">{{data?'Update':'Save'}}</button>
+  </div>
+</form>
+
+  

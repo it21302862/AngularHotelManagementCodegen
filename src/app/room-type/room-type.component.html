@@ -1,0 +1,47 @@
+<h2>{{ hotelName }}</h2>
+<app-grid-list></app-grid-list>
+
+
+  <div class="booking-form">
+    <h1>Choose your room</h1>
+    <form (ngSubmit)="bookRoomType(selectedRoomType)">
+      <div class="form-row">
+      <div class="form-group">
+        <label for="checkIn">Check-in Date:</label>
+        <input type="date" id="checkIn" name="checkIn" [(ngModel)]="checkIn" required>
+      </div>
+      <div class="form-group">
+        <label for="checkOut">Check-out Date:</label>
+        <input type="date" id="checkOut" name="checkOut" [(ngModel)]="checkOut" required>
+      </div>
+      <div class="form-group">
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" name="guests" [(ngModel)]="noOfPax" required>
+      </div>
+    </div>
+    </form>
+  </div>
+
+   <div class="container mt-8 mx-auto mb-8" id="main-container">
+    <div class="row card-container">
+      <div class="col-md-4" *ngFor="let roomType of roomTypes">
+        <mat-card class="example-card card-item">
+          <mat-card-header>
+            <mat-card-title>{{ roomType.roomType }}</mat-card-title>
+            <mat-card-subtitle>Best Services</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="{{ roomType.imgUrl }}" alt="Photo of a Hotel Room">
+          <mat-card-content class="card-content">
+            <p>{{ roomType.description }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <!-- Use (click) event binding to call bookRoomType method -->
+            <button mat-button class="blue-button" style="margin-left: 10px;" (click)="bookRoomType(roomType)">Book Now LKR {{ roomType.price }}</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
+  
+  

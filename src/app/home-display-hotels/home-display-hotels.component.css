@@ -1,0 +1,120 @@
+
+
+  .example-card {
+    max-width: 400px;
+    height: 100%; /* Add this line to make all cards the same height */
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed */
+    gap: 10px; 
+    column-gap: 20px;
+    color:rgb(14, 14, 81)
+  }
+  
+  .card-container .col-md-6 {
+    flex: 0 0 calc(25% - 10px); /* Adjust as needed to ensure 4 cards per row */
+    margin-bottom: 10px; 
+  }
+  
+  @media (min-width: 992px) {
+    .card-container .col-md-6 {
+      flex: 0 0 calc(25% - 10px); /* Adjust as needed */
+    }
+  }
+
+  .like-button {
+    background-color: rgb(14, 14, 81);
+    color: white;
+  }
+  
+  .card-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* CSS class to style the mat-card-content */
+  .card-content {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; 
+  background-color: rgb(14, 14, 81);
+  max-width: 800px;
+  max-height: 100px;
+  border-radius: 10px;
+  margin: 15px auto;
+  padding: 20px;
+}
+
+.search-bar p {
+  font-size: 18px; 
+  font-weight: bold; 
+  margin-right: 20px; 
+  color: #f5eeee;
+  margin-top: 20px;
+
+}
+
+
+.search-field {
+  border-radius: 50px;
+  margin: 25px 0 5px 10px;
+  max-width: 200px; 
+  max-height: 72px;
+
+  
+}
+
+
+.search-field input {
+  color: #333;
+  border-radius: 15px;
+  padding: 5px;
+  
+}
+
+
+.search-field ::ng-deep .mat-input-placeholder {
+  color: #888; 
+}
+
+
+/* External CSS (in a separate .css file) */
+.orange-hr {
+  background-color: #f31606;
+  height: 3px; /* Optional: Set the height of the line */
+}
+
+
+/* CSS */
+.search-button {
+  background-color: #f31606; 
+  color: #fff; 
+  padding: 25px 25px;
+  border-radius: 5px; 
+  font-weight: bold; 
+  transition: background-color 0.3s ease; 
+  line-height: 1.5;
+  margin-right: 2px;
+  margin: 0 0 5px 5px;
+
+ 
+}
+
+.search-button:hover {
+  background-color: #f05124; 
+}
+
+

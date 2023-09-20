@@ -1,0 +1,54 @@
+
+  <!-- <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+          <span class="nav-item">Dashboard</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">VIEW HOTELS</span>
+        </a></li>
+        <li><a href="">
+          <i class="fas fa-user"></i>
+          <span class="nav-item">VIEW CONTRACTS</span>
+        </a></li>
+      </ul>
+    </nav>
+
+    <section class="main">
+      <app-hotel-display-admin></app-hotel-display-admin>
+    </section>
+  </div> -->
+
+
+  <div class="container">
+    <nav>
+
+        <div class="logo">
+          <h1>DASHBOARD</h1>
+        </div>
+      <ul>
+        <li><a routerLink="/dashboard" routerLinkActive="active"> <!-- Update routerLink -->
+          <i class="fas fa-home"></i>
+          <span class="nav-item">VIEW HOTELS</span>
+        </a></li>
+        <li><a routerLink="/contracts" routerLinkActive="active"> <!-- Update routerLink -->
+          <i class="fas fa-user"></i>
+          <span class="nav-item">VIEW CONTRACTS</span>
+        </a></li>
+      </ul>
+    </nav>
+  
+    <section class="main">
+      <app-hotel-display-admin></app-hotel-display-admin> <!-- Named router outlet -->
+    </section>
+  </div>
+  
+
+
+  
+
+
+
+

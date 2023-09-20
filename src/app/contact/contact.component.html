@@ -1,0 +1,43 @@
+
+   <div class="container mt-5 h-full mx-auto">
+    
+
+    <div *ngIf="formSubmitted && successMessage" class="mb-4">
+        <div class="bg-green-200 border-green-600 border-l-4 p-4">
+          {{ successMessage }}
+        </div>
+      </div>
+
+    <div *ngIf="!formSubmitted" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="md:col-span-1">
+            <h1 style="background: linear-gradient(270deg, #7B61FF 0%, #9647FF 97.04%)"class="text-4xl font-semibold text-center mb-8 w-full text-white" >Contact Us</h1>
+            <p class="text-gray-600 text-sm mt-8">Use this form to reach out to us regarding any questions, concerns, or feedback. You can also view our FAQ for quick answers to commonly asked questions.</p>
+            <h2 class="text-2xl font-semibold mb-4">Contact Information</h2>
+            <address class="text-gray-600">
+              <strong>Hotel Orange </strong><br>
+              123 Main Street<br>
+              Colombo, Sri Lanka<br>
+              Phone: +94 (123) 456-789<br>
+              Email: orange.hotels@services.lk<br>
+            </address>
+        </div>
+        <div class="md:col-span-1 border rounded-lg p-4 flex flex-col items-center w-full">
+            <h2 class="text-2xl font-semibold mb-4 w-full">Contact Form</h2>
+            <form (ngSubmit)="submitForm()" class="w-full">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-600">Your Name:</label>
+                <input type="text" class="form-input" id="name" name="name" [(ngModel)]="formData.name" required>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-gray-600">Your Email:</label>
+                <input type="email" class="form-input" id="email" name="email" [(ngModel)]="formData.email" required>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block text-gray-600">Message:</label>
+                <textarea class="form-textarea" id="message" name="message" [(ngModel)]="formData.message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
