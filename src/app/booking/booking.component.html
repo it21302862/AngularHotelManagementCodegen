@@ -42,10 +42,13 @@
         <mat-card class="card">
           <mat-card-content>
             <!-- Display basic information -->
-            <p class="card-text">Check-in Date: {{ checkIn }}</p>
-            <p class="card-text">Check-out Date: {{ checkOut }}</p>
-            <p class="card-text">Number of Guests: {{ noOfPax }}</p>
-            <p class="card-text">Base Price: {{ roomPrice }}</p>
+            <p *ngIf="!error"class="card-text">Check-in Date: {{ checkIn }}</p>
+            <p *ngIf="!error"class="card-text">Check-out Date: {{ checkOut }}</p>
+            <p *ngIf="!error"class="card-text">Number of Guests: {{ noOfPax }}</p>
+            <p *ngIf="!error"class="card-text">Base Price: {{ roomPrice }}</p>
+            <div *ngIf="error" class="error-message">
+              {{ error }}
+           </div> 
           </mat-card-content>
         </mat-card>
       </div>

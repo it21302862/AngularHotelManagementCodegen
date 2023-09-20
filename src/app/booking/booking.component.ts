@@ -71,6 +71,9 @@ export class BookingComponent implements OnInit {
     
     this.http.post<any>(url, 0).subscribe(
       (response: any) => {
+        if (response.error) {
+          this.error = response.error; // Display the error message
+      }else{
         this.roomPrice = response?.roomPrice ?? null;
         this.reservationId = response?.reservationId ?? null;
         console.log('Room Price:', this.roomPrice);
@@ -78,6 +81,7 @@ export class BookingComponent implements OnInit {
         if (this.reservationId) {
           this.fetchSupplements();
         }
+      }
       },
       (error: HttpErrorResponse) => {
         this.error =
