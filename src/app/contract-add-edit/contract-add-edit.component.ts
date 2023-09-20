@@ -20,6 +20,7 @@ export class ContractAddEditComponent implements OnInit {
   supplementPrices!:FormArray;
   markupPrices!:FormArray;
   discounts!: FormGroup;
+  
 
   constructor(
     private _fb: FormBuilder,
@@ -38,6 +39,7 @@ export class ContractAddEditComponent implements OnInit {
     this.supplementPrices=this.contractFormGroup.get('supplementPrices') as FormArray;
     this.markupPrices=this.contractFormGroup.get('markupPrices') as FormArray;
     this.discounts=this.contractFormGroup.get('discounts') as FormGroup;
+  
   }
 
   //add
@@ -72,6 +74,7 @@ export class ContractAddEditComponent implements OnInit {
     this.discounts.setValue(discount);
   }
 
+ 
 
   //remove
 
@@ -121,12 +124,15 @@ export class ContractAddEditComponent implements OnInit {
   }
 
   createRoomTypes(): FormGroup {
-    return this._fb.group({
+    const form = this._fb.group({
       roomType: [''],
       noOfRooms: [0],
       maxAdults: [0]
     });
+    console.log(form); // Log the form to the console
+    return form;
   }
+  
 
   createRoomTypePrices(): FormGroup {
     return this._fb.group({
@@ -153,6 +159,8 @@ export class ContractAddEditComponent implements OnInit {
     });
   }
 
+ 
+
   createDiscount(): FormGroup {
     return this._fb.group({
       discountPercentage: [0.1],
@@ -167,7 +175,7 @@ export class ContractAddEditComponent implements OnInit {
       contractID: [0],
       startDate: [new Date(), Validators.required],
       endDate: [new Date(), Validators.required],
-      termsAndConditions: ['Sample terms and conditions', Validators.required],
+      termsAndConditions: [''],
       hotel: this._fb.group({
         hotelID: [0]
       }),

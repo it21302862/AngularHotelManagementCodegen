@@ -2,7 +2,7 @@
   <h2 class="text-xl font-semibold mb-4">Create a New Contract</h2>
 
   <!-- Contract Details -->
-  <div formGroupName="contract" class="mb-4">
+  <div class="mb-4">
     <div class="mb-2">
       <label for="startDate">Start Date:</label>
       <input type="date" id="startDate" formControlName="startDate" required class="w-full rounded-md border-gray-300 px-2 py-1"/>
@@ -157,11 +157,11 @@
     </div>
     <div>
       <label for="noOfRooms">Number of Rooms:</label>
-      <input type="text" id="noOfRooms" formControlName="noOfRooms">
+      <input type="number" id="noOfRooms" formControlName="noOfRooms">
     </div>
     <div>
       <label for="maxAdults">Maximum Adults:</label>
-      <input type="text" id="maxAdults" formControlName="maxAdults">
+      <input type="number" id="maxAdults" formControlName="maxAdults">
     </div>
     <button type="button" (click)="removeRoomTypes(i)" class="remove-button">Remove</button>
   </div>
