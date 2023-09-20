@@ -2,7 +2,7 @@
   <h2 class="text-xl font-semibold mb-4">Create a New Contract</h2>
 
   <!-- Contract Details -->
-  <div class="mb-4">
+  <!-- <div class="mb-4">
     <div class="mb-2">
       <label for="startDate">Start Date:</label>
       <input type="date" id="startDate" formControlName="startDate" required class="w-full rounded-md border-gray-300 px-2 py-1"/>
@@ -19,7 +19,29 @@
         required
       ></textarea>
     </div>
+  </div> -->
+
+  <div class="column-container">
+    <div class="season-row">
+      <div class="input-container">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" formControlName="startDate" required class="w-full rounded-md border-gray-300 px-2 py-1"/>
+      </div>
+      <div class="input-container">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" formControlName="endDate" required />
+      </div>
+      <div class="input-container">
+        <label for="termsAndConditions">Terms and Conditions:</label>
+        <textarea class="w-full rounded-md border-gray-300 px-2 py-1"
+          id="termsAndConditions"
+          formControlName="termsAndConditions"
+          required
+        ></textarea>
+      </div>
+    </div>
   </div>
+  
 
   <!-- Hotel Details -->
   <div formGroupName="hotel">
@@ -32,7 +54,7 @@
   <!-- Seasons -->
   
   <div formArrayName="seasons" class="seasons-container">
-    <button type="button" class="add-season-button" (click)="addSeason()">Add Season</button>
+      <button type="button" class="add-season-button" (click)="addSeason()">Add Season</button>
     <div *ngFor="let season of seasons.controls; let i = index" [formGroupName]="i" class="season">
       <div class="season-row">
         <div class="input-container">
