@@ -201,7 +201,7 @@ input {
   color: white;
   border: none;
   border-radius: 3px;
-  padding: 10px 60px;
+  padding: 10px 57px;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -257,7 +257,7 @@ input {
   color: white;
   border: none;
   border-radius: 3px;
-  padding: 10px 43px;
+  padding: 10px 40px;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -311,7 +311,7 @@ input {
   color: white;
   border: none;
   border-radius: 3px;
-  padding: 10px 55px;
+  padding: 10px 52px;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -352,3 +352,10 @@ input {
 .remove-button:hover {
   background-color: #ff4c4c;
 }
+
+.action {
+  display: flex;
+  gap: 2px;
+} 
+
+
