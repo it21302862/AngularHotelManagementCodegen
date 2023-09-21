@@ -1,26 +1,24 @@
 import { Component,OnInit, ViewChild } from '@angular/core';
-import { SeasonDTO } from '../services/SeasonDTO';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { HotelService } from '../services/hotels.service';
+import { SupplementDTO } from '../services/SupplementDTO';
 
 @Component({
-  selector: 'app-season-display-admin',
-  templateUrl: './season-display-admin.component.html',
-  styleUrls: ['./season-display-admin.component.css']
+  selector: 'app-supplement-display-admin',
+  templateUrl: './supplement-display-admin.component.html',
+  styleUrls: ['./supplement-display-admin.component.css']
 })
-export class SeasonDisplayAdminComponent  implements OnInit{
+export class SupplementDisplayAdminComponent implements OnInit{
 
   displayedColumns: string[] = [
-    'seasonID',
-    'seasonName',
-    'startDate',
-    'endDate',
+    'supplementID',
+    'supplementName',
     'contractID'
   ];
 
-  dataSource!: MatTableDataSource<SeasonDTO>;
+  dataSource!: MatTableDataSource<SupplementDTO>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -30,16 +28,11 @@ export class SeasonDisplayAdminComponent  implements OnInit{
 
 
   ngOnInit(): void {
-    this.getSeasonsList();
+    this. getSupplementList();
   }
 
-  onSliderChange(event: any) {
-    const sliderValue = event.value;
-    console.log('Slider value changed:', sliderValue);
-  }
-
-  public getSeasonsList(): void {
-    this._hotelService.getAllSeasons().subscribe({
+  public getSupplementList(): void {
+    this._hotelService.getAllSupplements().subscribe({
       next: (res) => {
         console.log('Data received from API:', res);
         if (Array.isArray(res)) {
@@ -59,7 +52,7 @@ export class SeasonDisplayAdminComponent  implements OnInit{
       },
     });
   }
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

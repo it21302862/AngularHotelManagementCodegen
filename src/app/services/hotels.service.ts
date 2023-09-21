@@ -6,7 +6,9 @@ import { RoomType } from './roomtypes';
 import { environment } from '../environments/environment';
 import { HotelContractDTO } from './HotelContractDTO ';
 import { SeasonDTO } from './SeasonDTO';
+
 import {HttpHeaders } from '@angular/common/http';
+import { SupplementDTO } from './SupplementDTO';
 
 
 @Injectable({
@@ -60,6 +62,10 @@ export class HotelService {
 
   public getAllSeasons(): Observable<SeasonDTO[]> {
     return this.http.get<SeasonDTO[]>(`${this.apiServerUrl}/api/v1/hotels/seasons`);
+  }
+
+  public getAllSupplements(): Observable<SupplementDTO[]> {
+    return this.http.get<SupplementDTO[]>(`${this.apiServerUrl}/api/v1/hotels/supplements`);
   }
 
 
