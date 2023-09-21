@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HotelService } from '../services/hotels.service';
 import { RoomType } from '../services/roomtypes';
+import { CoreService } from '../core/core.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class RoomTypeComponent implements OnInit {
   constructor(
     private hotelService: HotelService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private _coreService:CoreService
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +62,12 @@ export class RoomTypeComponent implements OnInit {
     const formattedCheckOut = this.formatDate(this.checkOut);
     if (!selectedRoomType) {
       console.error('No room type selected.');
+      return;
+    }
+
+    if (!this.noOfPax || !this.checkIn || !this.checkOut) {
+      // Check if any of the required fields are null or empty
+      this._coreService.openSnackBar('Please enter valid check-in and check-out dates, and a valid number of guests!','error');
       return;
     }
 
