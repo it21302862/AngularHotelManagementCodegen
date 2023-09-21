@@ -3,22 +3,24 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { HotelService } from '../services/hotels.service';
-import { SupplementDTO } from '../services/SupplementDTO';
+import { RoomTypeDTO } from '../services/RoomTypeDTO';
 
 @Component({
-  selector: 'app-supplement-display-admin',
-  templateUrl: './supplement-display-admin.component.html',
-  styleUrls: ['./supplement-display-admin.component.css']
+  selector: 'app-room-type-display-admin',
+  templateUrl: './room-type-display-admin.component.html',
+  styleUrls: ['./room-type-display-admin.component.css']
 })
-export class SupplementDisplayAdminComponent implements OnInit{
+export class RoomTypeDisplayAdminComponent implements OnInit{
 
   displayedColumns: string[] = [
-    'supplementID',
-    'supplementName',
+    'roomTypeID',
+    'roomType',
+    'noOfRooms',
+    'maxAdults',
     'contractID'
   ];
 
-  dataSource!: MatTableDataSource<SupplementDTO>;
+  dataSource!: MatTableDataSource<RoomTypeDTO>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -26,17 +28,18 @@ export class SupplementDisplayAdminComponent implements OnInit{
 
   constructor(private _hotelService: HotelService){}
 
+
+  ngOnInit(): void {
+    this.getRoomTypesList();
+  }
+
   onSliderChange(event: any) {
     const sliderValue = event.value;
     console.log('Slider value changed:', sliderValue);
   }
 
-  ngOnInit(): void {
-    this. getSupplementList();
-  }
-
-  public getSupplementList(): void {
-    this._hotelService.getAllSupplements().subscribe({
+  public getRoomTypesList(): void {
+    this._hotelService.getAllRoomTypes().subscribe({
       next: (res) => {
         console.log('Data received from API:', res);
         if (Array.isArray(res)) {
@@ -56,7 +59,7 @@ export class SupplementDisplayAdminComponent implements OnInit{
       },
     });
   }
-
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

@@ -11,6 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ContractsAdminComponent } from './contracts-admin/contracts-admin.component';
 import { SeasonDisplayAdminComponent } from './season-display-admin/season-display-admin.component';
 import { SupplementDisplayAdminComponent } from './supplement-display-admin/supplement-display-admin.component';
+import { RoomTypeDisplayAdminComponent } from './room-type-display-admin/room-type-display-admin.component';
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'admin', component: HotelDisplayAdminComponent },
   { path: 'contracts', component: ContractsAdminComponent },
   { path: 'seasons', component: SeasonDisplayAdminComponent },
-  { path: 'supplements', component:  SupplementDisplayAdminComponent },
+  { path: 'supplements', component: SupplementDisplayAdminComponent },
+  { path: 'roomtypes', component: RoomTypeDisplayAdminComponent},
   { path: 'room-types/:hotelID', component: RoomTypeComponent },
   { path: 'dashboard', component: SlideBarComponent },
   { path: 'about-us', component: AboutUsComponent },

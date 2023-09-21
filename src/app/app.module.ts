@@ -38,6 +38,7 @@ import { ContractsAdminComponent } from './contracts-admin/contracts-admin.compo
 import { ContractAddEditComponent } from './contract-add-edit/contract-add-edit.component';
 import { SeasonDisplayAdminComponent } from './season-display-admin/season-display-admin.component';
 import { SupplementDisplayAdminComponent } from './supplement-display-admin/supplement-display-admin.component';
+import { RoomTypeDisplayAdminComponent } from './room-type-display-admin/room-type-display-admin.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { SupplementDisplayAdminComponent } from './supplement-display-admin/supp
     ContractsAdminComponent,
     ContractAddEditComponent,
     SeasonDisplayAdminComponent,
-    SupplementDisplayAdminComponent
+    SupplementDisplayAdminComponent,
+    RoomTypeDisplayAdminComponent
   ],
   imports: [
     BrowserModule,
