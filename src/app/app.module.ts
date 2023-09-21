@@ -39,6 +39,8 @@ import { ContractAddEditComponent } from './contract-add-edit/contract-add-edit.
 import { SeasonDisplayAdminComponent } from './season-display-admin/season-display-admin.component';
 import { SupplementDisplayAdminComponent } from './supplement-display-admin/supplement-display-admin.component';
 import { RoomTypeDisplayAdminComponent } from './room-type-display-admin/room-type-display-admin.component';
+import { RoomPricesDisplayAdminComponent } from './room-prices-display-admin/room-prices-display-admin.component';
+import { SupplementPricesDisplayAdminComponent } from './supplement-prices-display-admin/supplement-prices-display-admin.component';
 
 
 @NgModule({
@@ -59,7 +61,9 @@ import { RoomTypeDisplayAdminComponent } from './room-type-display-admin/room-ty
     ContractAddEditComponent,
     SeasonDisplayAdminComponent,
     SupplementDisplayAdminComponent,
-    RoomTypeDisplayAdminComponent
+    RoomTypeDisplayAdminComponent,
+    RoomPricesDisplayAdminComponent,
+    SupplementPricesDisplayAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ import { SeasonDTO } from './SeasonDTO';
 import {HttpHeaders } from '@angular/common/http';
 import { SupplementDTO } from './SupplementDTO';
 import { RoomTypeDTO } from './RoomTypeDTO';
+import { RoomTypePriceDTO } from './RoomTypePriceDTO';
+import { SupplementPriceDTO } from './SupplementPriceDTO';
 
 
 @Injectable({
@@ -71,6 +73,14 @@ export class HotelService {
 
   public getAllRoomTypes(): Observable<RoomTypeDTO[]> {
     return this.http.get<RoomTypeDTO[]>(`${this.apiServerUrl}/api/v1/hotels/roomTypes`);
+  }
+
+  public getAllRoomTypePrices(): Observable<RoomTypePriceDTO[]> {
+    return this.http.get<RoomTypePriceDTO[]>(`${this.apiServerUrl}/api/v1/hotels/roomTypePrices`);
+  }
+
+  public getAllSupplementPrices(): Observable<SupplementPriceDTO[]> {
+    return this.http.get<SupplementPriceDTO[]>(`${this.apiServerUrl}/api/v1/hotels/supplementPrices`);
   }
 
 

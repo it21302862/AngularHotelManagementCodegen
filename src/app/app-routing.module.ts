@@ -12,6 +12,8 @@ import { ContractsAdminComponent } from './contracts-admin/contracts-admin.compo
 import { SeasonDisplayAdminComponent } from './season-display-admin/season-display-admin.component';
 import { SupplementDisplayAdminComponent } from './supplement-display-admin/supplement-display-admin.component';
 import { RoomTypeDisplayAdminComponent } from './room-type-display-admin/room-type-display-admin.component';
+import { RoomPricesDisplayAdminComponent } from './room-prices-display-admin/room-prices-display-admin.component';
+import { SupplementPricesDisplayAdminComponent } from './supplement-prices-display-admin/supplement-prices-display-admin.component';
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'seasons', component: SeasonDisplayAdminComponent },
   { path: 'supplements', component: SupplementDisplayAdminComponent },
   { path: 'roomtypes', component: RoomTypeDisplayAdminComponent},
+  { path: 'roomtypeprices', component: RoomPricesDisplayAdminComponent},
+  { path: 'supplementprices', component: SupplementPricesDisplayAdminComponent},
   { path: 'room-types/:hotelID', component: RoomTypeComponent },
   { path: 'dashboard', component: SlideBarComponent },
   { path: 'about-us', component: AboutUsComponent },
