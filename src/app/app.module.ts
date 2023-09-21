@@ -36,6 +36,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContractsAdminComponent } from './contracts-admin/contracts-admin.component';
 import { ContractAddEditComponent } from './contract-add-edit/contract-add-edit.component';
+import { SeasonDisplayAdminComponent } from './season-display-admin/season-display-admin.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ContractAddEditComponent } from './contract-add-edit/contract-add-edit.
     ContactComponent,
     HomePageComponent,
     ContractsAdminComponent,
-    ContractAddEditComponent
+    ContractAddEditComponent,
+    SeasonDisplayAdminComponent
   ],
   imports: [
     BrowserModule,

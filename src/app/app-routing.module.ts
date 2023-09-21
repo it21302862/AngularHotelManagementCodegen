@@ -9,7 +9,7 @@ import { BookingComponent } from './booking/booking.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContractsAdminComponent } from './contracts-admin/contracts-admin.component';
-
+import { SeasonDisplayAdminComponent } from './season-display-admin/season-display-admin.component';
 
 
 const routes: Routes = [
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'hotels', component: HomeDisplayHotelsComponent },
   { path: 'admin', component: HotelDisplayAdminComponent },
   { path: 'contracts', component: ContractsAdminComponent },
+  { path: 'seasons', component: SeasonDisplayAdminComponent },
   { path: 'room-types/:hotelID', component: RoomTypeComponent },
   { path: 'dashboard', component: SlideBarComponent },
   { path: 'about-us', component: AboutUsComponent },

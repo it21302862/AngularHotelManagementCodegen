@@ -1,0 +1,68 @@
+ <div class="main-body">
+    <div class="form-container">
+  
+    <mat-form-field style="width: 100%">
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Ex. Mia"
+        #input
+      />
+    </mat-form-field>
+  
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- ID Column -->
+        <ng-container matColumnDef="seasonID">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+            <td mat-cell *matCellDef="let row">{{ row.seasonDTO.seasonID }}</td>
+          </ng-container>
+
+        <!-- SeasonName Column -->
+        <ng-container matColumnDef="seasonName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Season Name</th>
+            <td mat-cell *matCellDef="let row">{{ row.seasonDTO.seasonName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="startDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
+            <td mat-cell *matCellDef="let row">{{ row.seasonDTO.startDate }}</td>
+          </ng-container>
+  
+        <!-- End date Column -->
+        <ng-container matColumnDef="endDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>End Date</th>
+            <td mat-cell *matCellDef="let row">{{ row.seasonDTO.endDate }}</td>
+          </ng-container>
+  
+        <!-- contract ID Column -->
+        <ng-container matColumnDef="contractID">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>contractID</th>
+          <td mat-cell *matCellDef="let row">{{ row.contractID }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr>
+      </table>
+  
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page of hotel contracts"
+      ></mat-paginator>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
