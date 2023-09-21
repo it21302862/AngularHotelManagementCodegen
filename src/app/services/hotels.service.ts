@@ -5,6 +5,7 @@ import { Hotel } from './hotel';
 import { RoomType } from './roomtypes';
 import { environment } from '../environments/environment';
 import { HotelContractDTO } from './HotelContractDTO ';
+import { SeasonDTO } from './SeasonDTO';
 import {HttpHeaders } from '@angular/common/http';
 
 
@@ -44,7 +45,7 @@ export class HotelService {
   }
   
   public getAllContracts(): Observable<HotelContractDTO[]> {
-    return this.http.get<HotelContractDTO[]>(`${this.apiServerUrl}/api/v1/hotels/all`);
+    return this.http.get<HotelContractDTO[]>(`${this.apiServerUrl}/api/v1/hotels/contracts`);
   }
 
   // public createHotelContract(hotelContractDTO: HotelContractDTO): Observable<string> {
@@ -55,7 +56,17 @@ export class HotelService {
     ...this.httpOptions,
     responseType: 'text' // Expect a plain text response
   });
-}
+  }
+
+  public getAllSeasons(): Observable<SeasonDTO[]> {
+    return this.http.get<SeasonDTO[]>(`${this.apiServerUrl}/api/v1/hotels/seasons`);
+  }
+
+
+
+
+
+
   
   
 
