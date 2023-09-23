@@ -18,23 +18,13 @@
         <!-- Number of Guests -->
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
-          <input
-            class="mat-input-element"
-            matInput
-            type="email"
-            name="email"
-          />
+          <input class="mat-input-element" matInput type="email" name="email" />
         </mat-form-field>
 
         <!-- Room Price -->
         <mat-form-field class="full-width">
           <mat-label>Telephone</mat-label>
-          <input
-            class="mat-input-element"
-            matInput
-            type="phone"
-            name="phone"
-          />
+          <input class="mat-input-element" matInput type="phone" name="phone" />
         </mat-form-field>
       </form>
 
@@ -42,13 +32,17 @@
         <mat-card class="card">
           <mat-card-content>
             <!-- Display basic information -->
-            <p *ngIf="!error"class="card-text">Check-in Date: {{ checkIn }}</p>
-            <p *ngIf="!error"class="card-text">Check-out Date: {{ checkOut }}</p>
-            <p *ngIf="!error"class="card-text">Number of Guests: {{ noOfPax }}</p>
-            <p *ngIf="!error"class="card-text">Base Price: {{ roomPrice }}</p>
+            <p *ngIf="!error" class="card-text">Check-in Date: {{ checkIn }}</p>
+            <p *ngIf="!error" class="card-text">
+              Check-out Date: {{ checkOut }}
+            </p>
+            <p *ngIf="!error" class="card-text">
+              Number of Guests: {{ noOfPax }}
+            </p>
+            <p *ngIf="!error" class="card-text">Base Price: {{ roomPrice }}</p>
             <div *ngIf="error" class="error-message">
               {{ error }}
-           </div> 
+            </div>
           </mat-card-content>
         </mat-card>
       </div>
@@ -80,13 +74,17 @@
         <mat-card class="card">
           <mat-card-content>
             <!-- Display basic information -->
-            <p *ngIf="!error"class="card-text">Check-in Date: {{ checkIn }}</p>
-            <p *ngIf="!error"class="card-text">Check-out Date: {{ checkOut }}</p>
-            <p *ngIf="!error"class="card-text">Number of Guests: {{ noOfPax }}</p>
-            <p *ngIf="!error"class="card-text">Base Price: {{ roomPrice }}</p>
+            <p *ngIf="!error" class="card-text">Check-in Date: {{ checkIn }}</p>
+            <p *ngIf="!error" class="card-text">
+              Check-out Date: {{ checkOut }}
+            </p>
+            <p *ngIf="!error" class="card-text">
+              Number of Guests: {{ noOfPax }}
+            </p>
+            <p *ngIf="!error" class="card-text">Base Price: {{ roomPrice }}</p>
             <div *ngIf="error" class="error-message">
               {{ error }}
-           </div> 
+            </div>
           </mat-card-content>
         </mat-card>
       </div>
@@ -99,17 +97,38 @@
         <!-- Check-in Date -->
         <div class="form-group">
           <label for="card-number">Card Number</label>
-          <input type="text" id="card-number" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" ngModel required>
+          <input
+            type="text"
+            id="card-number"
+            name="cardNumber"
+            placeholder="XXXX-XXXX-XXXX-XXXX"
+            ngModel
+            required
+          />
         </div>
-    
+
         <div class="form-group">
           <label for="card-expiry">Expiry Date (MM/YY)</label>
-          <input type="text" id="card-expiry" name="expiryDate" placeholder="MM/YY" ngModel required>
+          <input
+            type="text"
+            id="card-expiry"
+            name="expiryDate"
+            placeholder="MM/YY"
+            ngModel
+            required
+          />
         </div>
-    
+
         <div class="form-group">
           <label for="card-cvc">CVC Number</label>
-          <input type="text" id="card-cvc" name="cvcNumber" placeholder="CVC" ngModel required>
+          <input
+            type="text"
+            id="card-cvc"
+            name="cvcNumber"
+            placeholder="CVC"
+            ngModel
+            required
+          />
         </div>
 
         <button type="submit">Book</button>
@@ -119,22 +138,54 @@
         <mat-card class="card">
           <mat-card-content>
             <!-- Display basic information -->
-            <p *ngIf="!error"class="card-text">Check-in Date: {{ checkIn }}</p>
-            <p *ngIf="!error"class="card-text">Check-out Date: {{ checkOut }}</p>
-            <p *ngIf="!error"class="card-text">Number of Guests: {{ noOfPax }}</p>
-            <p *ngIf="!error"class="card-text">Base Price: {{ roomPrice }}</p>
+            <p *ngIf="!error" class="card-text">Check-in Date: {{ checkIn }}</p>
+            <p *ngIf="!error" class="card-text">
+              Check-out Date: {{ checkOut }}
+            </p>
+            <p *ngIf="!error" class="card-text">
+              Number of Guests: {{ noOfPax }}
+            </p>
+            <p *ngIf="!error" class="card-text">Base Price: {{ roomPrice }}</p>
             <div *ngIf="error" class="error-message">
               {{ error }}
-           </div>
+            </div>
+            <div *ngIf="roomPriceWithNoOfDates !== null">
+              <p class="card-text">
+                Final Room Price: {{ roomPriceWithNoOfDates }}
+              </p>
+            </div>
+            <div *ngIf="supplementPriceWithNoOfDates !== null">
+              <p class="card-text">
+                Final Supplement Price: {{ supplementPriceWithNoOfDates }}
+              </p>
+            </div>
+            <div *ngIf="discountPrice !== null">
+              <p class="card-text">Discount: {{ discountPrice }}</p>
+            </div>
+            <div *ngIf="MarkupPrice !== null">
+              <p class="card-text">Tax: {{ MarkupPrice }}</p>
+            </div>
+            <br />
             <div *ngIf="finalPrice !== null">
               <p class="card-text">Final Price: {{ finalPrice }}</p>
             </div>
-            <button (click)="displayFinalPrice()" style="background-color: #007bff; color: #fff; border: none; border-radius: 3px; padding: 10px 20px; cursor: pointer; font-size: 16px;">Display Final Price</button>
-          
+            <button
+              (click)="displayFinalPrice()"
+              style="
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 16px;
+              "
+            >
+              Display Final Price
+            </button>
           </mat-card-content>
         </mat-card>
       </div>
     </div>
-    
   </mat-tab>
 </mat-tab-group>

@@ -27,6 +27,10 @@ export class BookingComponent implements OnInit {
   supplements: Supplement[] = [];
   reservation: Reservation | null = null;
   finalPrice: number | null = null; 
+  supplementPriceWithNoOfDates: number | null= null;
+  roomPriceWithNoOfDates: number | null = null;
+  MarkupPrice: number | null= null;
+  discountPrice: number | null= null;
 
 
 
@@ -142,11 +146,24 @@ export class BookingComponent implements OnInit {
   
       this.http.get<any>(url).subscribe(
         (response: any) => {
+          const roomPriceWithNoOfDates = response?.roomPriceWithNoOfDates ?? null;
+          const supplementPriceWithNoOfDates = response?.supplementPriceWithNoOfDates ?? null;
+          const MarkupPrice = response?.MarkupPrice ?? null;
+          const discountPrice=response?.discountPrice ?? null;
           const finalPrice = response?.finalPrice ?? null;
+          
           console.log('Final Price:', finalPrice);
+          console.log('Final Supplement Price:', supplementPriceWithNoOfDates);
+          console.log('Final Room Price:', roomPriceWithNoOfDates);
+          console.log('Markup Price:', MarkupPrice);
+          console.log('Discount Price:',discountPrice);
   
           // Display the final price to the customer, e.g., update a component property
           this.finalPrice = finalPrice;
+          this.MarkupPrice=MarkupPrice;
+          this.discountPrice=discountPrice;
+          this.roomPriceWithNoOfDates=roomPriceWithNoOfDates;
+          this.supplementPriceWithNoOfDates=supplementPriceWithNoOfDates;
         },
         (error: HttpErrorResponse) => {
           console.error('Error calculating final price:', error);
