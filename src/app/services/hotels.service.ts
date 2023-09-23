@@ -68,6 +68,10 @@ export class HotelService {
     return this.http.get<SeasonDTO[]>(`${this.apiServerUrl}/api/v1/hotels/seasons`);
   }
 
+  public deleteSeason(seasonID: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/api/v1/hotels/deleteSeason/${seasonID}`);
+  }
+
   public getAllSupplements(): Observable<SupplementDTO[]> {
     return this.http.get<SupplementDTO[]>(`${this.apiServerUrl}/api/v1/hotels/supplements`);
   }

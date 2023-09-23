@@ -4,6 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { HotelService } from '../services/hotels.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { CoreService } from '../core/core.service';
 
 @Component({
   selector: 'app-season-display-admin',
@@ -17,7 +19,8 @@ export class SeasonDisplayAdminComponent  implements OnInit{
     'seasonName',
     'startDate',
     'endDate',
-    'contractID'
+    'contractID',
+    'action',
   ];
 
   dataSource!: MatTableDataSource<SeasonDTO>;
@@ -26,7 +29,7 @@ export class SeasonDisplayAdminComponent  implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private _hotelService: HotelService){}
+  constructor(private _hotelService: HotelService,private _coreService:CoreService){}
 
 
   ngOnInit(): void {
@@ -67,6 +70,19 @@ export class SeasonDisplayAdminComponent  implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  public onDeleteSeason(seasonID: number): void {
+    this._hotelService.deleteSeason(seasonID).subscribe(
+      (response: void) => {
+        this._coreService.openSnackBar('Season deleted successfully!','done');
+        console.log(response);
+        this.getSeasonsList();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
 }
