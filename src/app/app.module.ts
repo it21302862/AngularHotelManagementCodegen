@@ -41,6 +41,7 @@ import { SupplementDisplayAdminComponent } from './supplement-display-admin/supp
 import { RoomTypeDisplayAdminComponent } from './room-type-display-admin/room-type-display-admin.component';
 import { RoomPricesDisplayAdminComponent } from './room-prices-display-admin/room-prices-display-admin.component';
 import { SupplementPricesDisplayAdminComponent } from './supplement-prices-display-admin/supplement-prices-display-admin.component';
+import { ReservationDisplayAdminComponent } from './reservation-display-admin/reservation-display-admin.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { SupplementPricesDisplayAdminComponent } from './supplement-prices-displ
     SupplementDisplayAdminComponent,
     RoomTypeDisplayAdminComponent,
     RoomPricesDisplayAdminComponent,
-    SupplementPricesDisplayAdminComponent
+    SupplementPricesDisplayAdminComponent,
+    ReservationDisplayAdminComponent
   ],
   imports: [
     BrowserModule,
