@@ -12,6 +12,7 @@ import { SupplementDTO } from './SupplementDTO';
 import { RoomTypeDTO } from './RoomTypeDTO';
 import { RoomTypePriceDTO } from './RoomTypePriceDTO';
 import { SupplementPriceDTO } from './SupplementPriceDTO';
+import { ReservationDTO } from './ReservationDTO';
 
 
 @Injectable({
@@ -81,6 +82,10 @@ export class HotelService {
 
   public getAllSupplementPrices(): Observable<SupplementPriceDTO[]> {
     return this.http.get<SupplementPriceDTO[]>(`${this.apiServerUrl}/api/v1/hotels/supplementPrices`);
+  }
+
+  public getAllReservations(): Observable<ReservationDTO[]> {
+    return this.http.get<ReservationDTO[]>(`${this.apiServerUrl}/api/v1/hotels/reservations`);
   }
 
 
