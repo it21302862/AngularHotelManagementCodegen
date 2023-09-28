@@ -6,6 +6,9 @@ import { MatSort } from '@angular/material/sort';
 import { HotelService } from '../services/hotels.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CoreService } from '../core/core.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteConfirmationDialogComponentComponent } from '../delete-confirmation-dialog-component/delete-confirmation-dialog-component.component';
+
 
 @Component({
   selector: 'app-season-display-admin',
@@ -29,7 +32,7 @@ export class SeasonDisplayAdminComponent  implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private _hotelService: HotelService,private _coreService:CoreService){}
+  constructor(private _hotelService: HotelService,private _coreService:CoreService,private dialog: MatDialog){}
 
 
   ngOnInit(): void {
@@ -71,6 +74,19 @@ export class SeasonDisplayAdminComponent  implements OnInit{
       this.dataSource.paginator.firstPage();
     }
   }
+
+  public openDeleteConfirmationDialog(seasonID: number): void {
+    const dialogRef = this.dialog.open(DeleteConfirmationDialogComponentComponent, {
+      width: '250px',
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'yes') {
+        this.onDeleteSeason(seasonID);
+      }
+    });
+  }
+
 
   public onDeleteSeason(seasonID: number): void {
     this._hotelService.deleteSeason(seasonID).subscribe(

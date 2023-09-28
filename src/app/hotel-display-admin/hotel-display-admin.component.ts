@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Hotel } from '../services/hotel';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CoreService } from '../core/core.service';
+import { DeleteConfirmationDialogComponentComponent } from '../delete-confirmation-dialog-component/delete-confirmation-dialog-component.component';
 
 @Component({
   selector: 'app-hotel-display-admin',
@@ -113,7 +114,19 @@ export class HotelDisplayAdminComponent implements OnInit {
     })
   }
 
-  public onDeleteEmloyee(hotelID: number): void {
+  public openDeleteConfirmationDialog(hotelID: number): void {
+    const dialogRef = this._dialog.open(DeleteConfirmationDialogComponentComponent, {
+      width: '250px',
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'yes') {
+        this.onDeleteHotel(hotelID);
+      }
+    });
+  }
+
+  public onDeleteHotel(hotelID: number): void {
     this._hotelService.deleteHotel(hotelID).subscribe(
       (response: void) => {
         this._coreService.openSnackBar('Hotel deleted successfully!','done');

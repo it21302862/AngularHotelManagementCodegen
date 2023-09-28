@@ -4,6 +4,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { HotelService } from '../services/hotels.service';
 import { RoomTypeDTO } from '../services/RoomTypeDTO';
+import { HttpErrorResponse } from '@angular/common/http';
+import { CoreService } from '../core/core.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteConfirmationDialogComponentComponent } from '../delete-confirmation-dialog-component/delete-confirmation-dialog-component.component';
 
 @Component({
   selector: 'app-room-type-display-admin',
@@ -17,7 +21,8 @@ export class RoomTypeDisplayAdminComponent implements OnInit{
     'roomType',
     'noOfRooms',
     'maxAdults',
-    'contractID'
+    'contractID',
+    'action'
   ];
 
   dataSource!: MatTableDataSource<RoomTypeDTO>;
@@ -26,7 +31,7 @@ export class RoomTypeDisplayAdminComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private _hotelService: HotelService){}
+  constructor(private _hotelService: HotelService,private _coreService:CoreService,private dialog: MatDialog){}
 
 
   ngOnInit(): void {
@@ -67,6 +72,43 @@ export class RoomTypeDisplayAdminComponent implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  // public onDeleteRoomType(roomTypeID: number): void {
+  //   this._hotelService.deleteRoomType(roomTypeID).subscribe(
+  //     (response: void) => {
+  //       this._coreService.openSnackBar('Room Type deleted successfully!','done');
+  //       console.log(response);
+  //       this.getRoomTypesList();
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
+
+  public openDeleteConfirmationDialog(roomTypeID: number): void {
+    const dialogRef = this.dialog.open(DeleteConfirmationDialogComponentComponent, {
+      width: '250px',
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'yes') {
+        this.onDeleteRoomType(roomTypeID);
+      }
+    });
+  }
+  
+  public onDeleteRoomType(roomTypeID: number): void {
+    this._hotelService.deleteRoomType(roomTypeID).subscribe(
+      () => {
+        this._coreService.openSnackBar('Room Type deleted successfully!', 'done');
+        this.getRoomTypesList();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
 }

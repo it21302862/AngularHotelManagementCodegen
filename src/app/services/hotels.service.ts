@@ -76,8 +76,17 @@ export class HotelService {
     return this.http.get<SupplementDTO[]>(`${this.apiServerUrl}/api/v1/hotels/supplements`);
   }
 
+  public deleteSupplement(supplementID: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/api/v1/hotels/deleteSupplement/${supplementID}`);
+  }
+
+
   public getAllRoomTypes(): Observable<RoomTypeDTO[]> {
     return this.http.get<RoomTypeDTO[]>(`${this.apiServerUrl}/api/v1/hotels/roomTypes`);
+  }
+
+  public deleteRoomType(roomTypeID: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/api/v1/hotels/deleteRoomType/${roomTypeID}`);
   }
 
   public getAllRoomTypePrices(): Observable<RoomTypePriceDTO[]> {

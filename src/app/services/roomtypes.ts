@@ -1,7 +1,7 @@
 export interface RoomType {
     seasonName:string;
     roomType: string;
-    price:string;
+    price:number;
     description:string;
     imgUrl:string;
     contractID:number;
