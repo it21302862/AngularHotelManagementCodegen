@@ -9,6 +9,8 @@ import { CoreService } from '../core/core.service';
 import { Hotel } from '../services/hotel';
 import { DiscountDTO } from '../services/DiscountDTO';
 import { ContractAddEditComponent } from '../contract-add-edit/contract-add-edit.component';
+import { HttpErrorResponse } from '@angular/common/http';
+import { DeleteConfirmationDialogComponentComponent } from '../delete-confirmation-dialog-component/delete-confirmation-dialog-component.component';
 
 @Component({
   selector: 'app-contracts-admin',
@@ -134,6 +136,31 @@ export class ContractsAdminComponent implements OnInit{
       if (this.dataSource.paginator) {
         this.dataSource.paginator.firstPage();
       }
+    }
+
+    public openDeleteConfirmationDialog(contractID: number): void {
+      const dialogRef = this._dialog.open(DeleteConfirmationDialogComponentComponent, {
+        width: '250px',
+      });
+    
+      dialogRef.afterClosed().subscribe(result => {
+        if (result === 'yes') {
+          this.onDeleteHotel(contractID);
+        }
+      });
+    }
+  
+    public onDeleteHotel(contractID: number): void {
+      this._hotelService.deleteContract(contractID).subscribe(
+        (response: void) => {
+          this._coreService.openSnackBar('Hotel Contract deleted successfully!','done');
+          console.log(response);
+          this.getHotelContractList();
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+      );
     }
 
 }

@@ -64,6 +64,10 @@ export class HotelService {
   });
   }
 
+  public deleteContract(contractID: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/api/v1/hotels/deleteContract/${contractID}`);
+  }
+
   public getAllSeasons(): Observable<SeasonDTO[]> {
     return this.http.get<SeasonDTO[]>(`${this.apiServerUrl}/api/v1/hotels/seasons`);
   }
