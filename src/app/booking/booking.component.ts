@@ -158,7 +158,7 @@ export class BookingComponent implements OnInit {
           console.log('Markup Price:', MarkupPrice);
           console.log('Discount Price:',discountPrice);
   
-          // Display the final price to the customer, e.g., update a component property
+          // Display the final price to the customer
           this.finalPrice = finalPrice;
           this.MarkupPrice=MarkupPrice;
           this.discountPrice=discountPrice;

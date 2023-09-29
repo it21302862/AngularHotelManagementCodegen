@@ -1,0 +1,17 @@
+/* not-found.component.css */
+
+.not-found {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #f00; /* Red color for the heading */
+  }
+  
+  p {
+    font-size: 1.5rem;
+    color: #333; /* Dark gray color for the message */
+  }
+  

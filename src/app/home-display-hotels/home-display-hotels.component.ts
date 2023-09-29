@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { MatInput } from '@angular/material/input';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home-display-hotels',
@@ -32,7 +33,8 @@ export class HomeDisplayHotelsComponent implements OnInit {
     private hotelService: HotelService,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
     iconRegistry.addSvgIconLiteral(
       'thumbs-up',
@@ -87,7 +89,10 @@ export class HomeDisplayHotelsComponent implements OnInit {
       }
 
       if (results.length === 0 || (!hotelName && !location)) {
-        this.getHotels();
+        this.snackBar.open('No results found', 'Dismiss', {
+          duration: 3000, // 3 seconds
+          verticalPosition: 'top', // Position at the top of the screen
+        });
       } else {
         this.hotels = results;
       }

@@ -43,6 +43,7 @@ import { RoomPricesDisplayAdminComponent } from './room-prices-display-admin/roo
 import { SupplementPricesDisplayAdminComponent } from './supplement-prices-display-admin/supplement-prices-display-admin.component';
 import { ReservationDisplayAdminComponent } from './reservation-display-admin/reservation-display-admin.component';
 import { DeleteConfirmationDialogComponentComponent } from './delete-confirmation-dialog-component/delete-confirmation-dialog-component.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { DeleteConfirmationDialogComponentComponent } from './delete-confirmatio
     RoomPricesDisplayAdminComponent,
     SupplementPricesDisplayAdminComponent,
     ReservationDisplayAdminComponent,
-    DeleteConfirmationDialogComponentComponent
+    DeleteConfirmationDialogComponentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,8 @@ import { RoomTypeDisplayAdminComponent } from './room-type-display-admin/room-ty
 import { RoomPricesDisplayAdminComponent } from './room-prices-display-admin/room-prices-display-admin.component';
 import { SupplementPricesDisplayAdminComponent } from './supplement-prices-display-admin/supplement-prices-display-admin.component';
 import { ReservationDisplayAdminComponent } from './reservation-display-admin/reservation-display-admin.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 const routes: Routes = [
   {path:'',component:HomePageComponent},
   { path: 'hotels', component: HomeDisplayHotelsComponent },
@@ -31,6 +33,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'booking', component: BookingComponent },
   { path: 'contact', component: ContactComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
