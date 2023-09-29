@@ -44,6 +44,7 @@ import { SupplementPricesDisplayAdminComponent } from './supplement-prices-displ
 import { ReservationDisplayAdminComponent } from './reservation-display-admin/reservation-display-admin.component';
 import { DeleteConfirmationDialogComponentComponent } from './delete-confirmation-dialog-component/delete-confirmation-dialog-component.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DiscountDisplayAdminComponent } from './discount-display-admin/discount-display-admin.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     SupplementPricesDisplayAdminComponent,
     ReservationDisplayAdminComponent,
     DeleteConfirmationDialogComponentComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DiscountDisplayAdminComponent
   ],
   imports: [
     BrowserModule,

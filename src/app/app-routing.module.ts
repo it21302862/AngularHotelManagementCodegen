@@ -16,6 +16,7 @@ import { RoomPricesDisplayAdminComponent } from './room-prices-display-admin/roo
 import { SupplementPricesDisplayAdminComponent } from './supplement-prices-display-admin/supplement-prices-display-admin.component';
 import { ReservationDisplayAdminComponent } from './reservation-display-admin/reservation-display-admin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DiscountDisplayAdminComponent } from './discount-display-admin/discount-display-admin.component';
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'roomtypeprices', component: RoomPricesDisplayAdminComponent},
   { path: 'supplementprices', component: SupplementPricesDisplayAdminComponent},
   { path: 'reservations', component: ReservationDisplayAdminComponent},
+  { path: 'discounts', component: DiscountDisplayAdminComponent },
   { path: 'room-types/:hotelID', component: RoomTypeComponent },
   { path: 'dashboard', component: SlideBarComponent },
   { path: 'about-us', component: AboutUsComponent },

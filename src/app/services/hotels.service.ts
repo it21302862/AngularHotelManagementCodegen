@@ -13,6 +13,7 @@ import { RoomTypeDTO } from './RoomTypeDTO';
 import { RoomTypePriceDTO } from './RoomTypePriceDTO';
 import { SupplementPriceDTO } from './SupplementPriceDTO';
 import { ReservationDTO } from './ReservationDTO';
+import { Discount } from './Discount';
 
 
 @Injectable({
@@ -105,13 +106,13 @@ export class HotelService {
     return this.http.get<ReservationDTO[]>(`${this.apiServerUrl}/api/v1/hotels/reservations`);
   }
 
+  public getAllDiscounts(): Observable<Discount[]> {
+    return this.http.get<Discount[]>(`${this.apiServerUrl}/api/v1/hotels/discounts`);
+  }
 
-
-
-
-
-  
-  
+   public deleteDiscount(discountID: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/api/v1/hotels/deleteDiscount/${discountID}`);
+  }
 
 }
 
