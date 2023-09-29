@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Supplement } from '../services/supplement';
 import { Reservation } from '../services/reservation';
 import { HttpParams } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -34,7 +35,7 @@ export class BookingComponent implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient,private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -79,7 +80,11 @@ export class BookingComponent implements OnInit {
     this.http.post<any>(url, 0).subscribe(
       (response: any) => {
         if (response.error) {
-          this.error = response.error; // Display the error message
+          // this.error = response.error; // Display the error message
+          this.snackBar.open(response.error, 'Close', {
+            duration: 7000, // Duration in milliseconds
+          });
+          this.error = response.error;
       }else{
         this.roomPrice = response?.roomPrice ?? null;
         this.reservationId = response?.reservationId ?? null;
