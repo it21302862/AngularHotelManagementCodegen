@@ -149,6 +149,7 @@
             <div *ngIf="error" class="error-message">
               {{ error }}
             </div>
+            <br>
             <div *ngIf="roomPriceWithNoOfDates !== null">
               <p class="card-text">
                 Final Room Price: {{ roomPriceWithNoOfDates }}
@@ -166,10 +167,10 @@
               <p class="card-text">Tax: {{ MarkupPrice }}</p>
             </div>
             <br />
-            <div *ngIf="finalPrice !== null">
+            <div *ngIf="finalPrice !== null" class="final-price">
               <p class="card-text">Final Price: {{ finalPrice }}</p>
             </div>
-            <button
+            <!-- <button
               (click)="displayFinalPrice()"
               style="
                 background-color: #007bff;
@@ -182,7 +183,7 @@
               "
             >
               Click Here to See Final Price
-            </button>
+            </button> -->
           </mat-card-content>
         </mat-card>
       </div>

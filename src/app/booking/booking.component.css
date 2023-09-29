@@ -32,14 +32,14 @@ mat-label {
 }
 
 .mat-input-element {
-  border: 1px solid #ccc; /* Add a border to the input */
-  border-radius: 4px; /* Add rounded corners */
-  padding: 2px; /* Adjust padding for the input */
-  transition: border-color 0.2s ease-in-out; /* Add a smooth transition for border color */
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  padding: 2px; 
+  transition: border-color 0.2s ease-in-out; 
 }
 
 .mat-input-element:focus {
-  border-color: #007bff; /* Change border color on focus */
+  border-color: #007bff; 
 }
 
 
@@ -152,5 +152,13 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #0e0e51; 
+}
+
+/* Add styles to the final price element */
+.final-price {
+  font-size: 24px; 
+  color: #f50e21; 
+  font-weight: bold; 
+  margin-top: 10px; 
 }
 

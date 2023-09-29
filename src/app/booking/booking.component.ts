@@ -51,7 +51,10 @@ export class BookingComponent implements OnInit {
         this.checkOut !== null &&
         this.noOfPax !== null
       ) {
-        this.calculatePrice();
+        // this.calculatePrice();
+        this.calculatePrice(() => {
+          this.displayFinalPrice();
+        });
       } else {
         this.error = 'Invalid query parameters.';
         
@@ -61,7 +64,7 @@ export class BookingComponent implements OnInit {
    
   }
 
-  calculatePrice() {
+  calculatePrice(callback: () => void) {
     console.log('cal runs');
     const requestPayload = {
       contractId: this.contractId,
@@ -83,7 +86,11 @@ export class BookingComponent implements OnInit {
         console.log('Room Price:', this.roomPrice);
         console.log('Reservation ID:', this.reservationId); 
         if (this.reservationId) {
-          this.fetchSupplements();
+          // this.fetchSupplements();
+          this.fetchSupplements(() => {
+            // Callback for fetchSupplements
+            callback(); // Call the callback here to execute displayFinalPrice
+          });
         }
       }
       },
@@ -96,7 +103,7 @@ export class BookingComponent implements OnInit {
     
   }
 
-  fetchSupplements() {
+  fetchSupplements(callback: () => void) {
     if (this.reservationId) {
       const url = `http://localhost:9090/api/v1/hotels/${this.reservationId}/supplements`;
 
@@ -104,6 +111,7 @@ export class BookingComponent implements OnInit {
         (response: Supplement[]) => {
           this.supplements = response;
           console.log('Supplements:', this.supplements);
+          this.displayFinalPrice();
         
         },
         (error: HttpErrorResponse) => {
@@ -128,6 +136,7 @@ export class BookingComponent implements OnInit {
       this.http.post<any>(url, null, { params }).subscribe(
         (response: any) => {
           console.log('Supplement added to reservation:', response);
+          this.displayFinalPrice();
         },
         (error: HttpErrorResponse) => {
           console.error('Error adding supplement to reservation:', error);
